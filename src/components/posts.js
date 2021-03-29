@@ -12,7 +12,7 @@ const Posts = ({ posts, members_count }) => {
 
       if ( type === 'photo' ) {
          return (
-            <GridListTile key={item.id} cols={1}>
+            <GridListTile key={photo.id} cols={1}>
                <img src={photo.photo_604} />
             </GridListTile>
          )
@@ -28,7 +28,7 @@ const Posts = ({ posts, members_count }) => {
       return 'ERpost ' + ER.toFixed(2) + '%'
    }
 
-   const textFormat = text => text.split("\n").map((item, key) => (<div key={key}>{item}</div>))
+   const textFormat = text => text.split("\n").map((item, key) => (<div key={key.toString()}>{item}</div>))
 
    const renderPosts = () => (posts || []).map(item => {
       let date = new Date(item.date * 1000)
@@ -37,7 +37,7 @@ const Posts = ({ posts, members_count }) => {
       let cols = photo_length && photo_length > 2 ? Math.ceil(photo_length / 3) : 1      
 
       return (
-         <div key={item.id} className="post">
+         <div key={item.id.toString()} className="post">
             <div className="post-header">
                {textFormat(item.text)}
             </div>
