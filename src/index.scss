@@ -138,6 +138,25 @@ code {
       border-radius: 5px;
       background-color: #fff;
       box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+
+
+      &.copy_history {
+        position: relative;
+        padding-left: 2rem;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 3px;
+          border-radius: 5px;
+          height: 94%;
+          background-color: #ddd;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          left: 1rem;
+        }
+      }
     }
 
     .post-body {
